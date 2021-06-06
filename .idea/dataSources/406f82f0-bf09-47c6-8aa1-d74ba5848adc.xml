@@ -1415,17 +1415,25 @@
       <Position>4</Position>
       <DataType>VARCHAR(128)|0s</DataType>
     </column>
-    <index id="512" parent="173" name="ix_user_username">
+    <column id="512" parent="173" name="about_me">
+      <Position>5</Position>
+      <DataType>VARCHAR(140)|0s</DataType>
+    </column>
+    <column id="513" parent="173" name="last_seen">
+      <Position>6</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <index id="514" parent="173" name="ix_user_username">
       <ColNames>username</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <index id="513" parent="173" name="ix_user_email">
+    <index id="515" parent="173" name="ix_user_email">
       <ColNames>email</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="514" parent="173">
+    <key id="516" parent="173">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
