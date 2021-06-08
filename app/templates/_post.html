@@ -1,12 +1,17 @@
-{% block content %}
+{% block app_content %}
      <table>
         <tr valign="top">
-            <td><img src="{{ task.author.avatar(36) }}"></td>
+            <td width="70px">
+                 <a href="{{ url_for('user', username=task.author.username) }}">
+                    <img src="{{ task.author.avatar(70) }}" />
+                </a>
             <td>
                 <a href="{{ url_for('user', username=task.author.username) }}">
                     {{ task.author.username }}
                 </a>
-                says:<br>{{ task.body }}
+                said {{ moment(task.timestamp).fromNow() }}:
+            <br>
+            {{ task.body }}
             </td>
         </tr>
     </table>
