@@ -1,17 +1,20 @@
 {% block app_content %}
-     <table>
+     <table class="table table-info shadow-sm p-3 mb-5 bg-body rounded">
         <tr valign="top">
             <td width="70px">
                  <a href="{{ url_for('user', username=task.author.username) }}">
-                    <img src="{{ task.author.avatar(70) }}" />
+                    <img class="rounded float-start" src="{{ task.author.avatar(70) }}" />
                 </a>
             <td>
-                <a href="{{ url_for('user', username=task.author.username) }}">
+                <a class="text-decoration-none link-secondary"
+                        href="{{ url_for('user', username=task.author.username) }}">
                     {{ task.author.username }}
                 </a>
                 said {{ moment(task.timestamp).fromNow() }}:
             <br>
-            {{ task.body }}
+            <p class="font-weight-bold">
+                {{ task.body }}
+            </p>
             </td>
         </tr>
     </table>
